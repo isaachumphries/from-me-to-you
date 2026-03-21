@@ -81,6 +81,7 @@ button:hover {
       height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: flex-start;
       align-items: center;
       font-family: sans-serif;
 }
@@ -134,7 +135,7 @@ button:hover {
       font-size: 25px;
       color: #333;
       font-family: 'Times New Roman', Times, serif;
-      margin-top: 190px;
+      margin-top: 10px;
       text-align: center;
       width: 100%;
 }
@@ -158,6 +159,19 @@ button:hover {
 .selectionBtn:hover {
       background-color: #d5e3e8;
     }
+.pigeon-logo{
+  position: absolute;
+  left: 7%;
+  max-width: 80px;
+  height: auto;
+  display: flex;
+  justify-content: left;
+}
+.logo-image{
+  height: auto;
+  max-width: 90px;
+  left: 2%
+}
   
 
 
