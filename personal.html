@@ -1,4 +1,55 @@
-<nav class="tab-bar">
-<a class="tab active">To Me</a>
-<a href="social.html" class="tab">From You</a>
-</nav>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <nav class="tab-bar">
+      <a class="tab active">To Me</a>
+      <a href="social.html" class="tab">From You</a>
+    </nav>
+  </head>
+  <body>
+
+    <!-- Days Counter -->
+    <div class="container" id="days-committed">
+      <div class="counter">
+        <p id="count">0</p>
+        <p>Days Committed</p>
+      </div>
+      <button id="incBtn">Check In</button>
+    </div>
+
+    <!-- Write a Future Letter -->
+    <div class="container" id="future-letters">
+      <h2>Write to Your Future Self</h2>
+      <textarea id="letterText" placeholder="Dear future me..."></textarea>
+      <div>
+        <label for="daysUntil">Deliver in</label>
+        <input type="number" id="daysUntil" min="1" value="30" />
+        <span>days</span>
+      </div>
+      <button id="sendLetterBtn">Seal & Send</button>
+      <p id="letterStatus"></p>
+    </div>
+
+    <!-- Envelope scroll -->
+    <div class="container" id="envelope-list">
+      <h2>Your Letters</h2>
+      <div id="envelopes"></div>
+      <div id="saved-letters"></div>
+    </div>
+
+    <!-- Popup for ready letters -->
+    <div id="letterPopup" style="display:none;">
+      <div id="popupCard">
+        <p id="popupFrom">A letter from your past self</p>
+        <p id="popupText"></p>
+        <button id="popupSave">Save Letter</button>
+        <button id="popupClose">Close</button>
+      </div>
+    </div>
+
+    <script type="module" src="personal.js"></script>
+  </body>
+</html>
