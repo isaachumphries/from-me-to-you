@@ -57,7 +57,7 @@ async function loadCategories() {
   `;
 }).join('');
 
-// attach listeners after rendering
+// attach listeners after rendering 
 document.querySelectorAll(".category-card").forEach(card => {
   card.addEventListener("click", () => {
     window.location.href = `category.html?id=${card.dataset.id}`;
