@@ -20,7 +20,7 @@
     }
 h2 {
     text-align:center;
-    margin_bottom:20px;
+    margin-bottom:20px;
     }
 input {
       display: block;
@@ -45,7 +45,7 @@ button:hover {
         color:#52b788
     }
 .background.loginAndSignup {
-  background-image: url("letter_pink.avif");
+  background-image: url("new_letter_pink.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
