@@ -34,7 +34,11 @@ async function loadCount(user) {
 }
 
 async function handleCheckIn(user) {
- await setDoc(doc(db, "users", user.uid), {
+  const snap = await getDoc(doc(db, "users", user.uid));
+  const data = snap.data() || {};
+  if (data.lastCheckIn && isToday(data.lastCheckIn)) { disableBtn(); return; }
+
+  await setDoc(doc(db, "users", user.uid), {
     count: increment(1),
     lastCheckIn: Date.now()
   }, { merge: true });
@@ -81,6 +85,18 @@ async function loadLetters(user) {
       <span class="envelope-days">${l.daysLeft} day${l.daysLeft !== 1 ? "s" : ""} left</span>
     </div>
   `).join('');
+
+  const saved = letters.filter(l => l.saved);
+  const savedDiv = document.getElementById("saved-letters");
+  savedDiv.innerHTML = saved.length ? `
+    <h3>Saved Letters</h3>
+    ${saved.map(l => `
+      <div class="saved-letter">
+        <p class="saved-date">Written ${new Date(l.createdAt).toLocaleDateString()}</p>
+        <p class="saved-text">${l.text}</p>
+      </div>
+    `).join('')}
+  ` : '';
 
   const ready = letters.filter(l => l.openDate <= now && !l.opened && !l.saved);
   if (ready.length > 0) showPopup(user, ready[0]);
