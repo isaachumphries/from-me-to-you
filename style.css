@@ -7,18 +7,22 @@
       height: 100vh;
       margin:0;
     }
-    .container {
+.container {
       background: white;
       padding: 30px;
       border-radius: 12px;
       width: 320px;
       box-shadow:0 4px 10px rgba(0,0,0,0.1);
     }
-    h2{
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+    }
+h2 {
     text-align:center;
     margin_bottom:20px;
     }
-    input {
+input {
       display: block;
       width: 100%;
       margin: 10px 0;
@@ -26,11 +30,45 @@
       border-radius: 6px;
       border: 1px solid #ccc;
     }
-     button:hover {
-      background: #52b788;
+input:focus {
+    outline: none;
+    border-bottom: 1px solid #52b788;
     }
-    #message{
+button:hover {
+      background: #7c8983;
+    }
+#message{
         text-align: center;
         margin-top: 10px;
         color:#52b788
     }
+.background.loginAndSignup {
+  background-image: url("kenrick-mills-1h2Pg97SXfA-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    }
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 20px;
+    }
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+    }
+.tagline {
+  font-size: 14px;
+  opacity: 0.8;
+    }
+
+

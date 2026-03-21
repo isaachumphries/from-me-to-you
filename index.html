@@ -7,27 +7,48 @@
 </head>
 
 <body>
-
+<div class="background loginAndSignup">
+    <div class="overlay">
+        <div class="header">
+            <image src="logo.jpeg" class="logo">
+                <h1>From Me To You</h1>
+                <p class="tagline">A message to your future self</p>
+        </div>
+  
 <div class="container">
-  <h2>Sign Up</h2>
-
-  <input type="text" id="username-input" placeholder="Name">
-
+  <h2 id="form-title">Create An Account</h2>
+  
+  <div id="signup-form">
+  <input type="text" id="username-input" placeholder="Username">
   <input type="email" id="email-input" placeholder="Email">
-
   <input type="password" id="password-input" placeholder="Password">
-
   <input type="password" id="confirmpassword-input" placeholder="Confirm Password">
+  <button onclick="signUp()">Create Account</button>
 
-  <button onclick="signUp()">Sign Up</button>
+  <p> Have an account?
+    <span onclick="showLogin()" class="link"><u>Log in</u></span>  
+  </p>
+</div>
 
-  <p id="message"></p>
+
+<div id="login-form" style="display:none;">
+     <input type="text" id="login-email" placeholder="Email">
+    <input type="password" id="login-password" placeholder="Password">
+     <button onclick="login()">Log In</button>
+     <p> Don't have an account?
+        <span onclick="showSignup()" class="link"><u>Create an account</u></span>
+     </p>
+</div>
+
+<p id="message"></p>
+</div>
+  </div>
 </div>
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.11.0/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDFS0Wlt8EU5fFqxBpi3yMTaw-xiA2Iozs",
@@ -40,7 +61,19 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
-export const auth = getAuth(app);
+const auth = getAuth(app);
+
+window.showLogin = function () {
+  document.getElementById("signup-form").style.display = "none";
+  document.getElementById("login-form").style.display = "block";
+  document.getElementById("form-title").innerText = "Log In";
+};
+
+window.showSignup = function () {
+  document.getElementById("signup-form").style.display = "block";
+  document.getElementById("login-form").style.display = "none";
+  document.getElementById("form-title").innerText = "Create Account";
+};
 
 window.signUp = function () {
   const email = document.getElementById("email-input").value;
@@ -61,6 +94,20 @@ window.signUp = function () {
     });
 };
 
+window.login = function () {
+  const Email = document.getElementById("login-email").value;
+  const Password = document.getElementById("login-password").value;
+  
+  signInWithEmailAndPassword(auth, email, password)
+    .then(() => {
+      document.getElementById("message").innerText = "Logged In!";
+      //to homepage
+      //window.location.href = "home.html";
+    })
+    .catch((error) => {
+      document.getElementById("message").innerText = error.message;
+    });
+};
 </script>
 
 </body>
