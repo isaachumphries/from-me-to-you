@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>From You</title>
+    <link rel="stylesheet" href="social-browse-style.css">
+</head>
+<body>
+
+    <div id="from-you-page">
+
+        <!-- CATEGORY SECTION -->
+        <div id="category-section">
+            <h2>Browse Topics</h2>
+
+            <div class="category-list">
+                <button class="category-btn" onclick="openCategory('General')">General</button>
+                <button class="category-btn" onclick="openCategory('Alcohol')">Alcohol</button>
+                <button class="category-btn" onclick="openCategory('Drug Abuse')">Drug Abuse</button>
+                <button class="category-btn" onclick="openCategory('Mental Health')">Mental Health</button>
+            </div>
+        </div>
+
+        <!-- CATEGORY CONTENT -->
+        <div id="category-content" style="display: none;">
+
+            <button onclick="goBack()">← Back</button>
+            <h2 id="category-title"></h2>
+
+            <!-- TAB NAVIGATION -->
+            <div class="tab-nav">
+                <button onclick="openTab('notes')">Notes</button>
+                <button onclick="openTab('wins')">Wins</button>
+                <button onclick="openTab('advice')">Advice</button>
+            </div>
+
+            <!-- TAB CONTENT -->
+            <div id="notes" class="tab-content">
+                <h3>Notes</h3>
+                <div class="post">Someone shared a thought...</div>
+            </div>
+
+            <div id="wins" class="tab-content" style="display:none;">
+                <h3>Wins</h3>
+                <div class="post">I stayed sober today.</div>
+            </div>
+
+            <div id="advice" class="tab-content" style="display:none;">
+                <h3>Advice</h3>
+                <div class="post">Try journaling daily.</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="social-browse-script.js"></script>
+</body>
+</html>
