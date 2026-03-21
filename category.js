@@ -68,9 +68,7 @@ document.getElementById("postNoteBtn").addEventListener("click", async () => {
   });
   document.getElementById("noteInput").value = "";
   loadNotes();
-});
-
-// ─── Wins ────────────────────────────────────────────────────
+}); 
 
 async function loadWins() {
   const snap = await getDocs(collection(db, "categories", categoryId, "wins"));
@@ -84,7 +82,7 @@ async function loadWins() {
         <div class="post-footer">
           <small>${data.authorName || "anonymous"}</small>
           <div class="post-actions">
-            <button onclick="likePost('wins', '${d.id}', this)">👍 ${data.likes || 0}</button>
+            <button onclick="likePost('wins', '${d.id}', this)">♥︎ ${data.likes || 0}</button>
           </div>
         </div>
       </div>
@@ -106,9 +104,7 @@ document.getElementById("postWinBtn").addEventListener("click", async () => {
   loadWins();
 });
 
-// ─── Advice ──────────────────────────────────────────────────
-
-const crisisWords = ["suicide", "end my life", "can't go on", "kill myself", "no reason to live"];
+const crisisWords = ["suicide", "end my life", "can't go on", "kill myself", "no reason to live", "need help immediately"];
 
 document.getElementById("adviceInput").addEventListener("input", () => {
   const text = document.getElementById("adviceInput").value.toLowerCase();
@@ -129,7 +125,7 @@ async function loadAdvice() {
         <div class="post-footer">
           <small>${data.authorName || "anonymous"}</small>
           <div class="post-actions">
-            <button onclick="likePost('advice', '${d.id}', this)">👍 ${data.likes || 0}</button>
+            <button onclick="likePost('advice', '${d.id}', this)">♥︎  ${data.likes || 0}</button>
           </div>
         </div>
       </div>
