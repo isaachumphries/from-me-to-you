@@ -10,10 +10,11 @@
 <div class="background loginAndSignup">
     <div class="overlay">
         <div class="header">
-            <image src="pigeon.png" class="logo">
+            <img src="pigeon.png" class="logo">
+            </div>
                 <h1>From Me To You</h1>
                 <p class="tagline">A message to your future self</p>
-        </div>
+        
   
 <div class="logincontainer">
   <h2 id="form-title">Create An Account</h2>
@@ -95,8 +96,8 @@ window.signUp = function () {
 };
 
 window.login = function () {
-  const Email = document.getElementById("login-email").value;
-  const Password = document.getElementById("login-password").value;
+  const email = document.getElementById("login-email").value;
+  const password = document.getElementById("login-password").value;
   
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
