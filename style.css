@@ -75,116 +75,134 @@ button:hover {
   opacity: 0.8;
     }
 
-.home-page-body {
-    margin: 0;
-    height: 100vh;
+    .home-page-body {
+      background-color: #ffefcb;
+      background-image: url("fm2u_background.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      font-family: sans-serif;
+   }
+   .home-page-body .home-overlay{
+    background: rgba(244, 141, 141, 0.4);
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    font-family: sans-serif;
-}
-.background{
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-  
-.top-container {
-    font-size: 55px;
-    color:black;
-    text-align: center;
-  
-    display: flex;
     justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    left: 0;
-    width: 100%;
-    height:60px;
-    background-color: #ffb0b0;
-    padding: 40px 60px;        
-  
-}
-.title-text {
-    font-size: 60px;
-    color: white;
-    margin: 0;
-    font-family:sans-serif;
-    -webkit-text-stroke: 2px black;
-}
-.login {
-    position: absolute;
-    right: 7%;
-    display: flex;
-    justify-content: right;
-    gap: 10px;
-}
-.btn {
-    padding: 10px 20px;
-    right: 30%;
-    font-size: 18px;
+    width:100%;
+    height:100%;
+   }
+   .top-container {
+      font-size: 55px;
+      color:black;
+      text-align: center;
+       display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      left: 0;
+      width: 100%;
+      height:60px;
+      /*background-color: #ffb0b0;*/
+      background: rgba(244, 141, 141, 0.4);
+      padding: 40px;       
+    }
+   .title-text {
+      font-size: 65px;
+      color: white;
+      margin: 0;
+      font-family:'Cormorant Garamond', serif;
+   
+   
+   }
+   .login {
+      position: absolute;
+      right: 7%;
+      display: flex;
+      justify-content: right;
+      gap: 10px;
+   }
+   .btn {
+      padding: 10px 20px;
+      right: 30%;
+      font-size: 18px;
+      background-color: white;
+      border: 2px solid #333;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+   }
+     
+   .btn:hover {
+      background-color: #f0d4f0;
+   }
+   .box {
+    margin-left: 0;
     background-color: white;
-    border: 2px solid #333;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-    
-.btn:hover {
-    background-color: #f0d4f0;
-}
-.middle-container{
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  gap: 40px;
-  width: 100%;
-  font-size: 30px;
-}
-.tagline {
-    font-size: 25px;
-    color: #333;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 180px;
-    text-align: center;
-    width: 100%;
-}
-.options{
+    border-radius: 8px;     
+    padding: 30px;          
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 20px;
-    margin-top: 30px;
-}
-    
-.selectionBtn {
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: white;
-    border: 2px solid #333;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-    
-.selectionBtn:hover {
-    background-color: #d5e3e8;
-  }
-.pigeon-logo{
-  position: absolute;
-  left: 7%;
-  max-width: 80px;
-  height: auto;
-  display: flex;
-  justify-content: left;
-}
-.logo-image{
-  height: auto;
-  max-width: 90px;
-  left: 2%
-}
+    margin-top: 150px;
+   }
+   .middle-container{
+    min-height: 100vh;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    font-size: 30px;
+   }
+   .home-tagline {
+      font-size: 25px;
+      margin: 0;
+      color: #333;
+      font-family: 'Cormorant Garamond', serif;
+      /*margin-top: 180px;*/
+      text-align: center;
+      width: 100%;
+   }
+   .options{
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px
+   }
+     
+   .selectionBtn {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: #ffb0b0;
+      border: 2px solid #333;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+     
+   .selectionBtn:hover {
+      background-color: #d5e3e8;
+    }
+   
+   
+   .logo-image{
+    height: auto;
+    max-width: 300px;
+   }
+   
   
 
 
