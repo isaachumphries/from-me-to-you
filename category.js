@@ -13,7 +13,7 @@ if (!categoryId) {
   throw new Error("No category ID"); 
 }
 
-const sections = ["Notes", "Wins", "Advice"];
+const sections = ["Notes", "Wins"];
 
 sections.forEach(name => {
   document.getElementById(`tab${name}`).addEventListener("click", () => {
@@ -46,7 +46,7 @@ async function loadNotes() {
         <div class="post-footer">
           <small>${data.authorName || "anonymous"}</small>
           <div class="post-actions">
-            <button onclick="likePost('notes', '${d.id}', this)">♡ ${data.likes || 0}</button>
+            <button onclick="likePost('notes', '${d.id}', this)">👍 ${data.likes || 0}</button>
             <button onclick="dislikePost('notes', '${d.id}', this)">👎</button>
           </div>
         </div>
@@ -82,7 +82,7 @@ async function loadWins() {
         <div class="post-footer">
           <small>${data.authorName || "anonymous"}</small>
           <div class="post-actions">
-            <button onclick="likePost('wins', '${d.id}', this)">♥︎ ${data.likes || 0}</button>
+            <button onclick="likePost('wins', '${d.id}', this)">👍 ${data.likes || 0}</button>
           </div>
         </div>
       </div>
@@ -125,7 +125,7 @@ async function loadAdvice() {
         <div class="post-footer">
           <small>${data.authorName || "anonymous"}</small>
           <div class="post-actions">
-            <button onclick="likePost('advice', '${d.id}', this)">♥︎  ${data.likes || 0}</button>
+            <button onclick="likePost('advice', '${d.id}', this)">👍  ${data.likes || 0}</button>
           </div>
         </div>
       </div>
