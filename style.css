@@ -1,7 +1,15 @@
-/* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ── Tokens ── */
+ body {
+      font-family: Arial, sans-serif;
+      background: #FDF6EC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin:0;
+    }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --cream: #FDF6EC;
   --cream-dark: #F5ECD9;
@@ -16,14 +24,11 @@
   --radius-md: 12px;
   --radius-lg: 16px;
 }
-
 html, body {
   background: var(--cream);
   font-family: 'DM Sans', sans-serif;
   color: var(--ink);
 }
-
-/* ── Top Bar ── */
 .topbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -35,7 +40,6 @@ html, body {
   padding: 0 24px;
   z-index: 100;
 }
-
 .logo {
   display: flex;
   align-items: center;
@@ -56,8 +60,6 @@ html, body {
   color: var(--ink);
   white-space: nowrap;
 }
-
-/* ── Tab Bar ── */
 .tab-bar {
   position: absolute;
   left: 50%;
@@ -87,8 +89,6 @@ html, body {
   box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 .tab:not(.active):hover { color: var(--ink); }
-
-/* ── Page Layout ── */
 .page {
   padding-top: 64px;
   min-height: 100vh;
@@ -103,9 +103,48 @@ html, body {
   flex-direction: column;
   gap: 16px;
 }
-
-/* ── Generic container reset (old code used this) ── */
 .container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+.header h1 {
+  margin: 0;
+  font-size: 36px;
+    }
+h2 {
+    text-align:center;
+    margin-bottom:20px;
+    }
+input {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+input:focus {
+    outline: none;
+    border-bottom: 1px solid #52b788;
+    }
+button:hover {
+      background: #7c8983;
+      transition: 0.5s;
+       transform: scale(1.1);
+    }
+#message{
+        text-align: center;
+        margin-top: 10px;
+        color:#52b788
+    }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -244,6 +283,146 @@ html, body {
   font-weight: 500;
   color: var(--ink);
   text-align: center;
+  color: white;
+  margin-bottom: 20px;
+    }
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+    }
+.tagline {
+#days-committed {
+  background: var(--ink);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}}
+.counter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.counter-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(253,246,236,0.55);
+}
+#count {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--cream);
+}
+
+#days-committed .counter > p:last-child {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(253,246,236,0.75);
+}
+#incBtn {
+  background: var(--sage);
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+#incBtn:hover:not(:disabled) { background: var(--sage-dark); }
+
+/* ── Write Card ── */
+#future-letters {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  gap: 0;
+  padding: 0;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 22px 14px;
+  border-bottom: 1px solid var(--border);
+}
+.section-icon {
+  width: 34px; height: 34px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.section-icon svg { width: 16px; height: 16px; }
+#future-letters h2 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+.section-sub {
+  font-size: 12px;
+  color: var(--ink-light);
+  margin-top: 2px;
+}
+#letterText {
+  width: 100%;
+  min-height: 110px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: var(--ink);
+  background: transparent;
+  line-height: 1.7;
+  padding: 16px 22px;
+}
+#letterText::placeholder { color: var(--ink-light); font-style: italic; }
+
+.deliver-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+}
+.deliver-label {
+  font-size: 12px;
+  color: var(--ink-mid);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.deliver-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+}
+#daysUntil {
+  width: 60px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
   background: transparent;
   font-family: 'DM Sans', sans-serif;
 }
@@ -277,8 +456,6 @@ html, body {
   min-height: 18px;
   padding: 8px 22px;
 }
-
-/* ── Your Letters ── */
 #envelope-list {
   gap: 10px;
 }
@@ -304,8 +481,6 @@ html, body {
   font-weight: 500;
   color: var(--ink);
 }
-
-/* Saved letters — rendered by JS */
 #saved-letters { display: flex; flex-direction: column; gap: 10px; }
 #saved-letters h3 {
   font-size: 14px;
@@ -333,7 +508,6 @@ html, body {
   line-height: 1.6;
 }
 
-/* ── Letter Popup ── */
 #letterPopup {
   position: fixed;
   inset: 0;
@@ -432,7 +606,6 @@ html, body {
 }
 .create-link:hover { color: var(--sage); }
 
-/* Category grid */
 .cat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
@@ -461,7 +634,6 @@ html, body {
 .cat-desc { font-size: 12px; color: var(--ink-light); line-height: 1.5; }
 .cat-members { font-size: 11px; color: var(--ink-light); margin-top: 4px; }
 
-/* Create category popup */
 .popup-overlay {
   display: none;
   position: fixed;
@@ -502,51 +674,66 @@ html, body {
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   font-size: 14px;
-  font-family: 'DM Sans', sans-serif;
-  color: var(--ink);
-  background: var(--cream);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.popup-input:focus { border-color: var(--sage); }
-.popup-actions-row { display: flex; gap: 8px; margin-top: 4px; }
-.btn-create {
-  flex: 1;
-  background: var(--ink);
-  color: var(--cream);
-  border: none;
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.btn-create:hover { background: var(--ink-mid); }
-.btn-cancel {
-  padding: 10px 18px;
-  background: none;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: 13px;
-  color: var(--ink-mid);
-  font-family: 'DM Sans', sans-serif;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.btn-cancel:hover { background: var(--cream); }
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-4px); }
-  50% { transform: translateX(4px); }
-  75% { transform: translateX(-4px); }
-  100% { transform: translateX(0); }
-}
-.envelope {
-  cursor: pointer;
-}
-
+  opacity: 0.8;
+    }
 .envelope.shake {
   animation: shake 0.4s ease;
+}
+
+
+/* ===== LOGIN PAGE  ===== */
+
+.background.loginAndSignup {
+  background-image: url("letterpinknew.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+.loginAndSignup.overlay {
+  background: rgba(156, 17, 17, 0.4) ;
+}
+
+.loginAndSignup.container {
+  width: 350px;
+  background: white;
+  padding: 30px ;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15) ;
+}
+
+.loginAndSignup.header {
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.loginAndSignup.logo {
+  display: block;
+  margin: 0 auto 10px;
+  width: 80px;
+}
+.loginAndSignup.tagline {
+  color: white;
+  font-size: 14px;
+}
+.loginAndSignup input {
+  border-radius: 10px;
+  padding: 12px;
+}
+.loginAndSignup button {
+  background: #2C2416;
+  color: #FDF6EC;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+}
+.loginAndSignup button:hover {
+  transform: scale(1.03); 
+}
+.loginAndSignup .logo-wrap {
+  display: flex;
+  justify-content: center;
 }
