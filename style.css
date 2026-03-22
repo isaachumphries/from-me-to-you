@@ -1,4 +1,4 @@
-<<<<<<< Updated upstream
+
  body {
       font-family: Arial, sans-serif;
       background: #FDF6EC;
@@ -8,7 +8,6 @@
       height: 100vh;
       margin:0;
     }
-=======
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -104,7 +103,6 @@ html, body {
   flex-direction: column;
   gap: 16px;
 }
->>>>>>> Stashed changes
 .container {
       background: white;
       padding: 30px;
@@ -142,15 +140,7 @@ button:hover {
         margin-top: 10px;
         color:#52b788
     }
-.background.loginAndSignup {
-  background-image: url("letter pink.avif");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-}
-<<<<<<< Updated upstream
+
 .overlay {
   background: rgba(0, 0, 0, 0.4);
   height: 100%;
@@ -170,7 +160,6 @@ button:hover {
   margin-bottom: 10px;
     }
 .tagline {
-=======
 #days-committed {
   background: var(--ink);
   border-radius: var(--radius-lg);
@@ -178,7 +167,7 @@ button:hover {
   flex-direction: row;
   align-items: center;
   gap: 16px;
-}
+}}
 .counter {
   flex: 1;
   display: flex;
@@ -553,16 +542,67 @@ button:hover {
   padding: 9px 12px;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
->>>>>>> Stashed changes
   font-size: 14px;
   opacity: 0.8;
     }
-
-
-<<<<<<< Updated upstream
-=======
 .envelope.shake {
   animation: shake 0.4s ease;
 }
 
->>>>>>> Stashed changes
+
+/* ===== LOGIN PAGE  ===== */
+
+.background.loginAndSignup {
+  background-image: url("letterpinknew.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+.loginAndSignup.overlay {
+  background: rgba(156, 17, 17, 0.4) ;
+}
+
+.loginAndSignup.container {
+  width: 350px;
+  background: white;
+  padding: 30px ;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15) ;
+}
+
+.loginAndSignup.header {
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.loginAndSignup.logo {
+  display: block;
+  margin: 0 auto 10px;
+  width: 80px;
+}
+.loginAndSignup.tagline {
+  color: white;
+  font-size: 14px;
+}
+.loginAndSignup input {
+  border-radius: 10px;
+  padding: 12px;
+}
+.loginAndSignup button {
+  background: #2C2416;
+  color: #FDF6EC;
+  border-radius: 10px;
+  padding: 12px;
+  width: 100%;
+}
+.loginAndSignup button:hover {
+  transform: scale(1.03); 
+}
+.loginAndSignup .logo-wrap {
+  display: flex;
+  justify-content: center;
+}
