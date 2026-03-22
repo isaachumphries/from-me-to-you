@@ -1,4 +1,45 @@
+<<<<<<< Updated upstream
 <nav class="tab-bar">
   <a href="personal.html" class="tab">To Me</a>
   <a class="tab active">From You</a>
 </nav>
+=======
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body class="categories">
+    <nav class="tab-bar">
+      <a href="personal.html" class="tab">To Me</a>
+      <a class="tab active">From You</a>
+    </nav>
+    <h1>Browse Categories</h1>
+    <a>or, </a><span id="openMakeCat" class="link"><u>create a category</u></span>
+  
+    <!-- The Category Creation Form -->
+    <div class="make-cat-popup" id="make-cat" style="display:none;">
+      <div class="make-cat-container">
+        <h1>Create Category</h1>
+        <label><b>Category Name</b></label>
+        <input type="text" id="catInput" placeholder="e.g.: Ex-Smokers, Coders, ..." required>
+
+        <label><b>Description</b></label>
+        <input type="text" id="catDesc" placeholder="e.g.: Home for people struggling with motivation" required>
+        
+        <button id="createCatBtn" class="createBtn">Create</button>
+        <button id="cancelCatBtn" class="cancelBtn">Cancel</button>
+      </div>
+    </div>
+
+     <!-- Category Retrieval -->
+    <div class="container" id="catBrowse">
+      
+    </div>
+  <script type="module" src="social.js"></script>
+  </body>
+</html>
+
+>>>>>>> Stashed changes
