@@ -11,13 +11,23 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-  <body class="categories">
+  <body class="social-content">
+    <header class="topbar">
+      <a class="logo" href="#">
+        <img src="pigeon.png" alt="Pigeon" class="logo-img"/>
+        <span class="logo-name">From Me To You</span>
+      </a>
     <nav class="tab-bar">
       <a href="personal.html" class="tab">To Me</a>
       <a class="tab active">From You</a>
     </nav>
-    <h1>Browse Categories</h1>
-    <a>or, </a><span id="openMakeCat" class="link"><u>create a category</u></span>
+    </header>
+
+    <h1 id="browse ">Browse Categories</h1>
+      <a>or </a>
+      <span id="openMakeCat" class="link">
+        <u>create a category</u>
+      </span>
   
     <!-- The Category Creation Form -->
     <div class="make-cat-popup" id="make-cat" style="display:none;">
@@ -35,7 +45,7 @@
     </div>
 
      <!-- Category Retrieval -->
-    <div class="container" id="catBrowse">
+    <div class="containerSocial" id="catBrowse">
       
     </div>
   <script type="module" src="social.js"></script>

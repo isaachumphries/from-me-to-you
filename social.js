@@ -26,7 +26,7 @@ document.getElementById("createCatBtn").addEventListener("click", async () => {
     name,
     description: desc,
     createdBy: user.uid,
-    createdByName: user.displayName || user.email,
+    createdByName: user.username || user.email.split("@")[0], // fallback to email prefix if username not set
     createdAt: serverTimestamp()
   });
 
