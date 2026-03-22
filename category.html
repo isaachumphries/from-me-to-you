@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <nav class="tab-bar">
+      <a href="personal.html" class="tab">To Me</a>
+      <a href="social.html" class="tab active">From You</a>
+    </nav>
+
+    <div class="container">
+      <a href="social.html" id="backBtn">Back to Categories</a>
+      <h1 id="catName">Loading...</h1>
+      <p id="catDesc"></p>
+      <small id="catCreator"></small>
+    </div>
+
+    <!-- Sub tabs -->
+    <div class="sub-tab-bar">
+      <button class="sub-tab active" id="tabNotes">Notes</button>
+      <button class="sub-tab" id="tabWins">Wins</button>
+      <button class="sub-tab" id="tabAdvice">Advice</button>
+    </div>
+
+    <!-- Notes -->
+    <div class="container sub-section" id="sectionNotes">
+      <textarea id="noteInput" placeholder="Share something that helped you..."></textarea>
+      <button id="postNoteBtn">Post Note</button>
+      <div id="notesFeed"></div>
+    </div>
+
+    <!-- Wins -->
+    <div class="container sub-section" id="sectionWins" style="display:none;">
+      <textarea id="winInput" placeholder="Share a win, big or small..."></textarea>
+      <button id="postWinBtn">Post Win</button>
+      <div id="winsFeed"></div>
+    </div>
+
+    <!-- Advice -->
+    <div class="container sub-section" id="sectionAdvice" style="display:none;">
+      <input type="text" id="adviceTitleInput" placeholder="Title (e.g.: What I wish I knew...)" />
+      <textarea id="adviceInput" placeholder="Share your advice..."></textarea>
+      <div id="crisisBox" style="display:none;"> 
+        <p>It sounds like you may need immediate support. Please reach out:</p>
+        <a href="tel:988">988 Suicide & Crisis Lifeline — call or text 988</a>
+        <a href="https://www.apa.org/topics/crisis-hotlines">APA Hotlines</a>
+        <p>Or talk to someone you trust right now. You don't have to go through this alone.</p>
+      </div>
+      <button id="postAdviceBtn">Post Advice</button>
+      <div id="adviceFeed"></div>
+    </div>
+
+    <script type="module" src="category.js"></script>
+  </body>
+</html>

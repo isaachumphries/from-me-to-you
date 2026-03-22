@@ -47,12 +47,19 @@ async function loadCategories() {
   }
 
   catBrowse.innerHTML = snap.docs.map(d => {
-    const data = d.data();
-    return `
-      <div class="category-card" onclick="window.location.href='category.html?id=${d.id}'">
-        <h3>${data.name}</h3>
-        <p>${data.description || ""}</p>
-      </div>
-    `;
-  }).join('');
-}
+  const data = d.data();
+  return `
+    <div class="category-card" data-id="${d.id}">
+      <h3>${data.name}</h3>
+      <p>${data.description || ""}</p>
+      <small>Created by ${data.createdByName || "someone"}</small>
+    </div>
+  `;
+}).join('');
+
+// attach listeners after rendering
+document.querySelectorAll(".category-card").forEach(card => {
+  card.addEventListener("click", () => {
+    window.location.href = `category.html?id=${card.dataset.id}`;
+  });
+});}
