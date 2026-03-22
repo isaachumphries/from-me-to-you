@@ -692,11 +692,11 @@ button:hover {
   width: 100vw;
 }
 .loginAndSignup .overlay {
-  background: rgba(156, 17, 17, 0.4) ;
-  display: flex !important;
+  background: rgba(244, 141, 141, 0.4) ;
+  display: flex ;
   flex-direction: column;
-  justify-content: center !important;
-  align-items: center !important;
+  justify-content: center ;
+  align-items: center;
 }
 
 .loginAndSignup .container {
@@ -723,7 +723,7 @@ button:hover {
   width: 80px;
 }
 .loginAndSignup .tagline {
-  color: white;
+  color: rgb(0, 0, 0);
   font-size: 14px;
 }
 .loginAndSignup input {
