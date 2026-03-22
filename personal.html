@@ -2,42 +2,76 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <nav class="tab-bar">
-      <a class="tab active">To Me</a>
-      <a href="social.html" class="tab">From You</a>
-    </nav>
   </head>
   <body>
 
-    <!-- Days Counter -->
-    <div class="container" id="days-committed">
-      <div class="counter">
-        <p id="count">0</p>
-        <p>Days Committed</p>
-      </div>
-      <button id="incBtn">Check In</button>
-    </div>
+    <!-- Top Bar -->
+    <header class="topbar">
+      <a class="logo" href="#">
+        <img src="pigeon.png" alt="Pigeon" class="logo-img"/>
+        <span class="logo-name">from me to you</span>
+      </a>
+      <nav class="tab-bar">
+        <a class="tab active">To Me</a>
+        <a href="social.html" class="tab">From You</a>
+      </nav>
+    </header>
 
-    <!-- Write a Future Letter -->
-    <div class="container" id="future-letters">
-      <h2>Write to Your Future Self</h2>
-      <textarea id="letterText" placeholder="Dear future me..."></textarea>
-      <div>
-        <label for="daysUntil">Deliver in</label>
-        <input type="number" id="daysUntil" min="1" value="30" />
-        <span>days</span>
-      </div>
-      <button id="sendLetterBtn">Seal & Send</button>
-      <p id="letterStatus"></p>
-    </div>
+    <div class="page">
+      <div class="page-content">
 
-    <!-- Envelope scroll -->
-    <div class="container" id="envelope-list">
-      <h2>Your Letters</h2>
-      <div id="envelopes"></div>
-      <div id="saved-letters"></div>
+        <!-- Days Counter -->
+        <div class="container" id="days-committed">
+          <div class="counter">
+            <p class="counter-label">Days Committed</p>
+            <p id="count">0</p>
+          </div>
+          <button id="incBtn">Check In</button>
+        </div>
+
+        <!-- Write a Future Letter -->
+        <div class="container" id="future-letters">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 12.5V14h1.5l8.1-8.1-1.5-1.5L2 12.5z" fill="none" stroke="#2C2416" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.35 3.15l.5.5a.7.7 0 010 1L12 5.5l-1.5-1.5.85-.85a.7.7 0 011 0z" fill="none" stroke="#2C2416" stroke-width="1.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h2>Write to Your Future Self</h2>
+              <p class="section-sub">Sealed and delivered when you're ready</p>
+            </div>
+          </div>
+          <textarea id="letterText" placeholder="Dear future me, I hope by the time you read this…"></textarea>
+          <div class="deliver-row">
+            <label for="daysUntil" class="deliver-label">Deliver in</label>
+            <div class="deliver-input-wrap">
+              <input type="number" id="daysUntil" min="1" value="30" />
+              <span class="deliver-unit">days</span>
+            </div>
+            <button id="sendLetterBtn">
+              <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 3a1 1 0 011-1h10a1 1 0 011 1v2.5L7 9 1 5.5V3z" fill="none" stroke="#FDF6EC" stroke-width="1.2"/>
+                <path d="M1 5.5V11a1 1 0 001 1h10a1 1 0 001-1V5.5" stroke="#FDF6EC" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Seal &amp; Send
+            </button>
+          </div>
+          <p id="letterStatus"></p>
+        </div>
+
+        <!-- Envelope scroll -->
+        <div class="container" id="envelope-list">
+          <h2>Your Letters</h2>
+          <div id="envelopes"></div>
+          <div id="saved-letters"></div>
+        </div>
+
+      </div>
     </div>
 
     <!-- Popup for ready letters -->
@@ -45,8 +79,10 @@
       <div id="popupCard">
         <p id="popupFrom">A letter from your past self</p>
         <p id="popupText"></p>
-        <button id="popupSave">Save Letter</button>
-        <button id="popupClose">Close</button>
+        <div class="popup-actions">
+          <button id="popupSave">Save Letter</button>
+          <button id="popupClose">Close</button>
+        </div>
       </div>
     </div>
 

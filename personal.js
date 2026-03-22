@@ -80,7 +80,7 @@ async function loadLetters(user) {
     .sort((a, b) => a.daysLeft - b.daysLeft);
 
   envelopesDiv.innerHTML = pending.map(l => `
-    <div class="envelope">
+    <div class="envelope" onclick="handleLockedClick(this)">
       <span class="envelope-icon">✉️</span>
       <span class="envelope-days">${l.daysLeft} day${l.daysLeft !== 1 ? "s" : ""} left</span>
     </div>
@@ -99,7 +99,7 @@ async function loadLetters(user) {
   ` : '';
 
   const ready = letters.filter(l => l.openDate <= now && !l.opened && !l.saved);
-  if (ready.length > 0) showPopup(user, ready[0]);
+  if (ready.length > 0) {showPopup(user, ready[0]);}
 }
 
 function showPopup(user, letter) {
@@ -124,13 +124,21 @@ function showPopup(user, letter) {
     await updateLetter({ opened: true });
   };
 }
+window.handleLockedClick = function(el) {
+  el.classList.add("shake");
 
+  setTimeout(() => {
+    el.classList.remove("shake");
+  }, 400);
+};
 onAuthStateChanged(auth, user => {
   if (!user) return (window.location.href = "index.html");
 
   loadCount(user);
   loadLetters(user);
 
-  incBtn.addEventListener("click", () => handleCheckIn(user));
-  sendLetterBtn.addEventListener("click", () => sendLetter(user));
+  //incBtn.addEventListener("click", () => handleCheckIn(user));
+  incBtn.onclick= () =>handleCheckIn(user);
+sendLetterBtn.onclick = () => sendLetter(user);
+  //sendLetterBtn.addEventListener("click", () => sendLetter(user));
 });
