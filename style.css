@@ -76,7 +76,6 @@ button:hover {
     }
 
 .home-page-body {
-    background-image: url("fm2u_background.png");
     margin: 0;
     height: 100vh;
     display: flex;
@@ -84,6 +83,11 @@ button:hover {
     justify-content: flex-start;
     align-items: center;
     font-family: sans-serif;
+}
+.background{
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
   
 .top-container {
@@ -107,7 +111,7 @@ button:hover {
     font-size: 60px;
     color: white;
     margin: 0;
-    font-family:monospace;
+    font-family:sans-serif;
     -webkit-text-stroke: 2px black;
 }
 .login {
@@ -138,6 +142,7 @@ button:hover {
   align-items: center; 
   gap: 40px;
   width: 100%;
+  font-size: 30px;
 }
 .tagline {
     font-size: 25px;
