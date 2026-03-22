@@ -611,7 +611,7 @@ button:hover {
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   gap: 12px;
 }
-.cat-card {
+.category-card {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -622,7 +622,7 @@ button:hover {
   flex-direction: column;
   gap: 6px;
 }
-.cat-card:hover { background: var(--cream); transform: translateY(-2px); }
+.category-card:hover { background: var(--cream); transform: translateY(-2px); }
 .cat-icon {
   width: 36px; height: 36px;
   border-radius: 10px;
@@ -680,6 +680,15 @@ button:hover {
   animation: shake 0.4s ease;
 }
 
+.containerSocial {
+      background: rgba(255, 255, 255, 0);
+      padding: 30px;
+      border-radius: 12px;
+      width: 320px;
+      box-shadow:0 4px 10px rgba(0, 0, 0, 0);
+    }
+
+
 
 /* ===== LOGIN PAGE  ===== */
 
@@ -691,37 +700,45 @@ button:hover {
   height: 100vh;
   width: 100vw;
 }
-.loginAndSignup.overlay {
+.loginAndSignup .overlay {
   background: rgba(156, 17, 17, 0.4) ;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-.loginAndSignup.container {
+.loginAndSignup .container {
   width: 350px;
   background: white;
   padding: 30px ;
   border-radius: 16px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15) ;
+   width: 350px !important;
+  max-width: 90% !important;
+  margin: 0 auto !important;
 }
 
-.loginAndSignup.header {
+.loginAndSignup .header {
   color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.loginAndSignup.logo {
+.loginAndSignup .logo {
   display: block;
   margin: 0 auto 10px;
   width: 80px;
 }
-.loginAndSignup.tagline {
+.loginAndSignup .tagline {
   color: white;
   font-size: 14px;
 }
 .loginAndSignup input {
   border-radius: 10px;
   padding: 12px;
+  width:100%
 }
 .loginAndSignup button {
   background: #2C2416;
